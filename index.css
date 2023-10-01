@@ -1,17 +1,55 @@
-#back{
-    height: 150px;
-    width: 150px;
-    background-color: rgba(224, 245, 206, 0.911);
-    border-radius: 50%;
-    position: relative;
-    border: solid 5px rgb(204, 231, 229);
-}
 img{
     width: 100%;
     height: 100%;
     position: absolute;
 }
 body{
-    background-image: url(../IMG/monitor-moderno-mesa-elegante.jpg);
-    background-size: cover;
+    background-image: url(IMG/monitor-moderno-mesa-elegante.jpg);
+    background-size: cover;    
+}
+
+* {
+    box-sizing: border-box;
+}
+
+
+#contenedor-reloj,
+#fondo,
+#hora-digital {
+    width: 150px;
+    height: 150px;
+}
+
+#fondo {
+    background: linear-gradient(white, lightgray);
+    border-radius: 50%;
+    border: 5px solid black;
+    filter: drop-shadow(0 10px 2px rgba(0, 0, 0, 0.5));
+}
+
+#contenedor-reloj,
+#manecillas {
+    position: relative;
+}
+
+#fondo,
+#horas,
+#minutos,
+#segundos,
+#hora-digital,
+#puntos  {
+    position: absolute;
+}
+
+#hora-digital {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 50px;
+    font-size: 80%;
+    opacity: 0.5;
+}
+
+#manecillas{
+    filter: drop-shadow(0 5px 2px rgba(0, 0, 0, 0.5));
 }

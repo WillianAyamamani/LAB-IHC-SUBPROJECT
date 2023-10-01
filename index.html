@@ -4,11 +4,72 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.3.1/p5.min.js"></script>
     <link rel="stylesheet" href="index.css">
 </head>
 <body>
     <div id="back">
-        <img src="../IMG/pngwing.com.png" alt="">
+        <div id="contenedor-reloj">
+            <div id="fondo"></div>
+            <div id="hora-digital">
+                <span id="texto-hora-digital">00:00:00</span>
+            </div>
+            <div id="manecillas">
+                <div id="horas">
+                    <svg width="300" height="300">
+                        <line id="horas-line" x1="75" y1="75" x2="150" y2="75" stroke="black" stroke-width="6" stroke-linecap="round" />
+                    </svg>
+                </div>
+                <div id="minutos">
+                    <svg width="300" height="300">
+                        <line id="minutos-line" x1="75" y1="75" x2="150" y2="60" stroke="black" stroke-width="4" stroke-linecap="round" />
+                    </svg>
+                </div>
+                <div id="segundos">
+                    <svg width="300" height="300">
+                        <line id="segundos-line" x1="75" y1="75" x2="150" y2="50" stroke="red" stroke-width="2" stroke-linecap="round" />
+                    </svg>
+                </div>
+            </div>
+        </div>
     </div>
+
+    <script>
+        function setup() {
+            noCanvas();
+            frameRate(1);
+        }
+
+        function draw() {
+            let hora = hour() % 12;
+            let minuto = minute();
+            let segundo = second();
+
+            select("#texto-hora-digital").html(`
+                ${(hora + "").padStart(2, 0)}:${(minuto + "").padStart(2, 0)}:${(segundo + "").padStart(2, 0)}
+            `);
+
+            // Calcula el ángulo de rotación en radianes
+            let horasAngulo = radians(360 * hora / 12 - 90);
+            let minutosAngulo = radians(360 * minuto / 60 - 90);
+            let segundosAngulo = radians(360 * segundo / 60 - 90);
+
+            // Calcula las coordenadas finales de las manecillas
+            let horasX2 = 75 + 60 * cos(horasAngulo);
+            let horasY2 = 75 + 60 * sin(horasAngulo);
+
+            let minutosX2 = 75 + 70 * cos(minutosAngulo);
+            let minutosY2 = 75 + 70 * sin(minutosAngulo);
+
+            let segundosX2 = 75 + 80 * cos(segundosAngulo);
+            let segundosY2 = 75 + 80 * sin(segundosAngulo);
+
+            // Actualiza las coordenadas de las líneas
+            select("#horas-line").attribute("x2", horasX2).attribute("y2", horasY2);
+            select("#minutos-line").attribute("x2", minutosX2).attribute("y2", minutosY2);
+            select("#segundos-line").attribute("x2", segundosX2).attribute("y2", segundosY2);
+        }
+    </script>
 </body>
 </html>
+
