@@ -35,7 +35,7 @@ function change_background() {
   function play_music() {
     let audio_files = [
       '1.mp3',
-      '2.m93'
+      '2.mp3'
     ];
     let index = 0;
     return function() {
@@ -45,7 +45,36 @@ function change_background() {
     }
   }
   
-  setInterval(show_clock, 1000);
-  setInterval(change_background, 3600000);
-  setInterval(play_music(), 3600000);
+//funtion audio
+var audio_files = [
+  '1.mp3',
+  '2.mp3'
+];
 
+function next() {
+  var ms = document.getElementById("musica");
+  var index = audio_files.indexOf(ms.src);
+  if (index !== -1 && index < audio_files.length - 1) {
+    ms.src = audio_files[index + 1];
+  } else {
+    ms.src = audio_files[0];
+  }
+  ms.load();
+  ms.play();
+}
+function before() {
+  var ms = document.getElementById("musica");
+  var index = audio_files.indexOf(ms.src);
+  if (index !== -1 && index > 0) {
+    ms.src = audio_files[index - 1];
+  } else {
+    ms.src = audio_files[audio_files.length - 1];
+  }
+  ms.load();
+  ms.play();
+}
+
+
+setInterval(show_clock, 1000);
+setInterval(change_background, 3600000);
+setInterval(play_music(), 3600000);

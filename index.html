@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
     <div class="clock">
@@ -30,6 +31,32 @@
 
         </ul>
     </div>
+    <div id="zoom">
+        <div id="clock">
+
+        </div>
+        <div id = "spotify">
+            <div id="mu">
+            <audio controls>
+                <source id="musica"src="1.mp3">
+            </audio>
+            </div>
+            <img src="IMG/music.png" alt="music" width="100" height="100">
+            <div id="btn">
+                <div id="before">
+                    <button onclick="before()">
+                    <img src="IMG/arrow.png" width="50" height="50" style="transform: scaleX(-1);">
+                    </button>
+                </div>
+                <div id="next">
+                    <button onclick="next()">
+                    <img src="IMG/arrow.png" width="50" height="50" onclick="next()">
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    </body>
     <script src="script.js"></script>
     
 </body>
