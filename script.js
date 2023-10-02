@@ -54,7 +54,10 @@ var audio_files = [
 function next() {
 var audio_files = [
   '1.mp3',
-  '2.mp3'
+  '2.mp3',
+  '3.mp3',
+  '4.mp3',
+  '5.mp3'
 ];
   console.log("GG")
   var ms = document.getElementById("uno");
@@ -68,8 +71,8 @@ var audio_files = [
   }
 }
 function before() {
-  var ms = document.getElementById("musica");
-  var index = audio_files.indexOf(ms.src);
+  var ms = document.getElementById("uno");
+  var index = audio_files.indexOf(ms.src.substring(ms.src.length-5,ms.src.length));
   if (index !== -1 && index > 0) {
     ms.src = audio_files[index - 1];
   } else {
@@ -81,3 +84,52 @@ function before() {
 setInterval(show_clock, 1000);
 setInterval(change_background, 3600000);
 setInterval(play_music(), 3600000);
+ //new code: https://github.com/DaniCodex/digital-clock/blob/master/script.js
+ const $tiempo = document.querySelector('.tiempo'),
+$fecha = document.querySelector('.fecha');
+
+function digitalClock(){
+    let f = new Date(),
+    dia = f.getDate(),
+    mes = f.getMonth() + 1,
+    anio = f.getFullYear(),
+    diaSemana = f.getDay();
+
+    dia = ('0' + dia).slice(-2);
+    mes = ('0' + mes).slice(-2)
+
+    let timeString = f.toLocaleTimeString();
+    $tiempo.innerHTML = timeString;
+
+    let semana = ['SUN','MON','TUE','WED','THU','FRI','SAT'];
+    let showSemana = (semana[diaSemana]);
+    $fecha.innerHTML = `${anio}-${mes}-${dia} ${showSemana}`
+}
+setInterval(() => {
+    digitalClock()
+}, 1000);
+//end code
+function ZOOM() {
+  var general = document.getElementById("zoom");
+  var fondo =  document.getElementById("ivan-c");
+  var uno =  document.getElementById("clock");
+  var dos = document.getElementById("spotify");
+  general.style.display = "flex";
+  uno.style.display = "flex";
+  dos.style.display = "none";
+  fondo.style.display = "none";
+}
+function music() {
+  var general = document.getElementById("zoom");
+  var uno =  document.getElementById("clock");
+  var dos = document.getElementById("spotify");
+  general.style.display = "flex";
+  uno.style.display = "none";
+  dos.style.display = "flex";
+}
+function salida() {
+  var general = document.getElementById("zoom");
+  var fondo =  document.getElementById("ivan-c");
+  fondo.style.display = "flex";
+  general.style.display = "none";
+}

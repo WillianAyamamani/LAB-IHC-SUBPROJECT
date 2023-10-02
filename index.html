@@ -6,9 +6,15 @@
     <title>Document</title>
     <link rel="stylesheet" href="index.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!--codigo de https://github.com/DaniCodex/digital-clock/blob/master/index.html-->
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
+    <!--fin del codigo-->
 </head>
 <body>
-    <div class="clock">
+    <div id="ivan-c" class="clock" onclick="ZOOM()">
         <div class="needle hr" style="--h:40px; 
         --clr:red"><span></span></div>
         <div class="needle mn" style="--h:60px; 
@@ -31,16 +37,19 @@
 
         </ul>
     </div>
-    <div id="zoom">
-        <div id="clock">
-
+    <div id="zoom" >
+        <div id="clock" onclick="music()">
+            <div class="reloj">
+                <p class="fecha"></p>
+                <p class="tiempo"></p>
+            </div>
         </div>
         <div id = "spotify">
             <div id="mu">
             <audio id="uno" src="1.mp3" controls></audio>
             <audio id="dos" src="2.mp3" controls></audio>
             </div>
-            <img src="IMG/music.png" alt="music" width="100" height="100">
+            <img src="IMG/music.png" alt="music" width="100" height="100" onclick="salida()">
             <div id="btn">
                 <div id="before">
                     <button onclick="before()">
@@ -49,7 +58,7 @@
                 </div>
                 <div id="next">
                     <button onclick="next()">
-                    <img src="IMG/arrow.png" width="50" height="50" onclick="next()">   
+                    <img src="IMG/arrow.png" width="50" height="50">   
                     </button>
                 </div>
             </div>
