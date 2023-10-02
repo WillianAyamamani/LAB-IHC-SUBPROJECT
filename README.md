@@ -21,8 +21,8 @@ ClockTunes es una aplicación única y divertida que combina la funcionalidad de
 
 ## Demo
 
-[Ejemplo de Funcionamiento:](https://youtu.be/ldtLfybPaJo)
-[Demo.webm](https://github.com/WillianAyamamani/LAB-IHC-SUBPROJECT/assets/88172318/e91bb0e3-922a-4e12-a84e-0395e066ccbf)
+https://github.com/WillianAyamamani/LAB-IHC-SUBPROJECT/assets/88172318/a52bae7e-0b58-411d-8709-5ab75f930abb
+
 
 ## Autores
 
