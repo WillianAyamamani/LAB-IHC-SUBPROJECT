@@ -1,5 +1,5 @@
 # LAB-IHC-SUBPROJECT
-
+[Abrir Página Web](https://clocktunes.netlify.app/)
 # ClockTunes (v0.0.1 PreAlfa)
 
 ClockTunes es un reloj digital que te permite reproducir música mientras visualizas la hora. Con una interfaz intuitiva y fácil de usar, ClockTunes es la herramienta perfecta para aquellos que buscan una forma única y divertida de mantenerse en el tiempo.
@@ -21,7 +21,7 @@ ClockTunes es una aplicación única y divertida que combina la funcionalidad de
 
 ## Demo
 
-(Demo.webm)
+[Ejemplo de Funcionamiento:](https://youtu.be/ldtLfybPaJo)
 
 ## Autores
 
