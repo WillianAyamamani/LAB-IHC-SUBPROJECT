@@ -1,3 +1,6 @@
+#dos{
+    display: none;
+}
 #before,#next{
     border-radius: 50%;
     background-color: #14af00;

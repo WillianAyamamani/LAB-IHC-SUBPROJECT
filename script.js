@@ -52,15 +52,20 @@ var audio_files = [
 ];
 
 function next() {
-  var ms = document.getElementById("musica");
-  var index = audio_files.indexOf(ms.src);
+var audio_files = [
+  '1.mp3',
+  '2.mp3'
+];
+  console.log("GG")
+  var ms = document.getElementById("uno");
+  var index = audio_files.indexOf(ms.src.substring(ms.src.length-5,ms.src.length));
   if (index !== -1 && index < audio_files.length - 1) {
     ms.src = audio_files[index + 1];
-  } else {
+    return 0;
+  } 
+  else {
     ms.src = audio_files[0];
   }
-  ms.load();
-  ms.play();
 }
 function before() {
   var ms = document.getElementById("musica");
@@ -70,8 +75,6 @@ function before() {
   } else {
     ms.src = audio_files[audio_files.length - 1];
   }
-  ms.load();
-  ms.play();
 }
 
 
