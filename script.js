@@ -19,7 +19,7 @@ function show_clock(){
 //   setInterval(show_clock,100);
 function change_background() {
     let date = new Date();
-    let minute = date.getMinutes();
+    let hours = date.getHours();
     let images = [
       'IMG/1.png',
       'IMG/2.png',
@@ -27,7 +27,7 @@ function change_background() {
       'IMG/4.png',
       'IMG/5.png'
     ];
-    let index = minute % images.length;
+    let index = hours % images.length;
     let background = `url(${images[index]})`;
     document.body.style.backgroundImage = background;
   }
@@ -46,6 +46,6 @@ function change_background() {
   }
   
   setInterval(show_clock, 1000);
-  setInterval(change_background, 60000);
-  setInterval(play_music(), 60000);
+  setInterval(change_background, 3600000);
+  setInterval(play_music(), 3600000);
 
